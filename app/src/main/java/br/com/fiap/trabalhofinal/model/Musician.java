@@ -3,9 +3,8 @@ package br.com.fiap.trabalhofinal.model;
 /**
  * Created by Julio on 14/04/2017.
  */
-
 public class Musician {
-    private int id;
+    private long id;
     private String name;
     private String artisticName;
     private String cpf;
@@ -15,11 +14,11 @@ public class Musician {
     public Musician() {
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -61,5 +60,17 @@ public class Musician {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Musician{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", artisticName='" + artisticName + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", instrument='" + instrument + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

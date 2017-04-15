@@ -14,19 +14,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.util.List;
+
+import br.com.fiap.trabalhofinal.dao.MusicianDAO;
+import br.com.fiap.trabalhofinal.model.Musician;
+import br.com.fiap.trabalhofinal.view.adapter.MusicianAdapter;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private RecyclerView rvLista;
+    private RecyclerView rvList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvLista = (RecyclerView) findViewById(R.id.rvLista);
+        rvList = (RecyclerView) findViewById(R.id.rvList);
 
-        carregarJogos();
+        loadMusicians();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -41,16 +47,15 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    private void carregarJogos() {
-        JogoDAO jogoDAO = new JogoDAO(this);
-        List<Jogo> jogos = jogoDAO.getAll();
+    private void loadMusicians() {
+        MusicianDAO musician = new MusicianDAO(this);
+        List<Musician> musicians = musician.getAll();
 
-        rvLista.setAdapter(new JogoAdapter(jogos, this));
+        rvList.setAdapter(new MusicianAdapter(musicians, this));
 
-        RecyclerView.LayoutManager layout = new LinearLayoutManager(this,
-                LinearLayoutManager.VERTICAL, false);
+        RecyclerView.LayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
-        rvLista.setLayoutManager(layout);
+        rvList.setLayoutManager(layout);
     }
 
     @Override
@@ -110,6 +115,7 @@ public class MainActivity extends AppCompatActivity
         if (resultCode == RESULT_CANCELED) {
             Toast.makeText(MainActivity.this, "Cancelado", Toast.LENGTH_LONG).show();
         } else if (requestCode == CadMusicianActivity.CODE_NEW) {
+            loadMusicians();
         }
     }
 
