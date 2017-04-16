@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import br.com.fiap.trabalhofinal.CadMusicianActivity;
+import br.com.fiap.trabalhofinal.activity.MusicianActivity;
 import br.com.fiap.trabalhofinal.R;
 import br.com.fiap.trabalhofinal.dao.MusicianDAO;
 import br.com.fiap.trabalhofinal.model.Musician;
@@ -55,9 +55,10 @@ public class MusicianViewHolder extends RecyclerView.ViewHolder implements View.
 
                     case R.id.menuEditar:
 
-                        final Intent intent = new Intent(context, CadMusicianActivity.class);
+                        final Intent intent = new Intent(context, MusicianActivity.class);
                         intent.putExtra("musicianId", musicianId);
-                        context.startActivityForResult(intent, CadMusicianActivity.CODE_NEW);
+                        intent.putExtra("code", MusicianActivity.CODE_UPDATE);
+                        context.startActivityForResult(intent, MusicianActivity.CODE_UPDATE);
 
                         break;
 

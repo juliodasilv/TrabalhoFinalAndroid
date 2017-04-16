@@ -4,14 +4,13 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/cad_musician"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Cadastro de Musico" />
+            android:title="@string/new_musician" />
     </group>
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/exit"
-            android:title="Sair" />
+            android:title="@string/exit" />
     </group>
 
 </menu>

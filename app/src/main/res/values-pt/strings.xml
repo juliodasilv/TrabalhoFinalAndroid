@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="incorrectLogin">Incorrect Login</string>
+    <string name="version">Versão 1.0</string>
+    <string name="canceled">Cancelado</string>
+    <string name="about">Sobre</string>
+    <string name="born">Nome Artistico</string>
+    <string name="artistic_name">Nome Artistico</string>
+    <string name="delete">Deletar</string>
+    <string name="description">Descrição</string>
+    <string name="detail">Detalhes</string>
+    <string name="edit">Editar</string>
+    <string name="exit">Sair</string>
+    <string name="insert_error">Erro ao inserir registro</string>
+    <string name="insert_success">Registro inserido com sucesso</string>
+    <string name="instruments">Instrumento(s)</string>
+    <string name="logar">Logar</string>
+    <string name="manter_conectado">Manter Conectado</string>
+    <string name="nacionality">Nacionalidade</string>
+    <string name="name">Nome</string>
+    <string name="new_musician">Cadastro de Músicos</string>
+    <string name="password">Senha</string>
+    <string name="save">Cadastrar</string>
+    <string name="action">Ações</string>
+</resources>
